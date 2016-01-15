@@ -1,0 +1,45 @@
+repositories {
+    mavenCentral()
+}
+
+/**
+ * loading jdbc driver into groovy classpath
+ */
+configurations {
+	driver
+}
+
+dependencies {
+	driver group: 'mysql', name: 'mysql-connector-java', version: '5.1.38'
+}
+
+URLClassLoader loader = GroovyObject.class.classLoader
+configurations.driver.each { File file ->
+	loader.addURL(file.toURI().toURL())
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.4'
+}
+
+/**
+ task
+ */
+task executeSql(type: SQLExecutionTask) {
+
+	if (!project.hasProperty("sqlFilePath")) {
+		logger.error("please specify -PsqlFilePath={filepath}")
+		return
+	}
+	logger.info("sqlFilePath : {}", sqlFilePath)
+
+	if (!project.hasProperty("propertyFilePath")) {
+		logger.error("please specify -PpropertyFilePath={filepath}")
+		return
+	}
+	logger.info("propertyFilePath : {}", propertyFilePath)
+
+	connPropsFilePath = propertyFilePath
+	sqlStmtFilePath = sqlFilePath
+}
+
