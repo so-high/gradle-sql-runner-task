@@ -6,7 +6,7 @@ containing custom task that execute sql statement
 -Psql=path/to/sql/statement.sql
 
 #connectionPropertyXml sample 
-"""
+```xml
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
@@ -15,4 +15,4 @@ containing custom task that execute sql statement
 	<entry key="jdbc.password">password</entry>
 	<entry key="jdbc.driver">com.mysql.jdbc.Driver</entry>
 </properties>
-"""
+```
