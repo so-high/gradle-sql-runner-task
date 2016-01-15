@@ -1,5 +1,6 @@
 # gradle-sql-runner-task
-containing custom task that execute sql statement
+contains a custom task implementation for sql-execution using jdbc driver
+and gradle task execute sql to use it!
 
 #usage 
 -PconnectionPropertyXml=path/to/connectionPropertyXml.xml
