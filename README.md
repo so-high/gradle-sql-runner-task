@@ -3,8 +3,11 @@ contains a custom task implementation for sql-execution using jdbc driver
 and gradle task execute sql to use it!
 
 #usage 
--PconnectionPropertyXml=path/to/connectionPropertyXml.xml
--Psql=path/to/sql/statement.sql
+```bash
+gradle executeSql \
+	-PconnectionPropertyXml=path/to/connectionPropertyXml.xml \
+	-Psql=path/to/sql/statement.sql
+```
 
 #connectionPropertyXml sample 
 ```xml
