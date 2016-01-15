@@ -1,6 +1,6 @@
 # gradle-sql-runner-task
 contains a custom task implementation for sql-execution using jdbc driver
-and gradle task execute sql to use it!
+and a gradle task definition that execute sql to use it!
 
 #usage 
 ```bash
